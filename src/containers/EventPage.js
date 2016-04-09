@@ -46,17 +46,22 @@ class EventPage extends Component {
 
           <div className="mdl-grid">
 
-            <div className="mdl-cell mdl-cell--4-col">
-              <h3>{title}</h3>
+            <div className="mdl-cell mdl-cell--4-col sidebar">
 
               <div>
                 <ShowMap lat={lat} lng={lon}/>
               </div>
             </div>
-            <div className="mdl-cell mdl-cell--8-col">
+            <div className="mdl-cell mdl-cell--8-col content">
+              <h3>{title}</h3>
               <p>
                   {description}
               </p>
+              <div>
+                <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Attend
+                </button>
+              </div>
             </div>
 
           </div>
