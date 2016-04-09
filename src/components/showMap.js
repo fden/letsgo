@@ -73,7 +73,8 @@ export default class ShowMap extends Component {
           ...restProps,
           style: {
             height: `300px`,
-            width: `300px`
+            "min-width": `300px`,
+            "max-width": `100%`
           },
         }}
         ref="map"

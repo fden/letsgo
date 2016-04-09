@@ -22,14 +22,43 @@ $cell-padding: 10px;
 
 .header {
   color: #9e9e9e;
-  background-color: #424242;
-  padding: 16px;
+  background: #424242;
+  padding: 16px 8px;
+}
+.logo {
+  color: #fff;
+  float: left;
+  border: solid 2px #fff;
+  padding: 16px 24px;
+  width: 28%;
+  text-align: center;
 }
 .sidebar {
-  background: #bdc3c7;
+  background: #dedede;
 }
 .content {
   background: #ecf0f1;
+  border-right: 2px solid #ccc;
+}
+.mdl-navigation {
+  float: right;;
+}
+.mdl-navigation__link {
+  color: #fff;
+  margin: 0 20px;
+}
+.mdl-badge {
+  cursor: pointer;
+}
+
+//content
+#root {
+  min-height: 900px;
+}
+
+//Footer
+.mdl-mini-footer__left-section {
+  margin: 0 auto;
 }
 
 //grid override
@@ -39,6 +68,10 @@ $cell-padding: 10px;
   .mdl-cell {
     margin: 0;
     padding: $cell-padding;
+
+    @media (max-width: 768px) {
+      width: 100% !important;
+    }
   }
   .mdl-cell--4-col {
     width: 33.3%;

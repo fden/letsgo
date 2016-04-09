@@ -62,7 +62,9 @@ class EventPage extends Component {
         return (
           <div className="mdl-grid">
             <div className="mdl-cell mdl-cell--4-col sidebar">
-
+              <h4>Owner: Alex Szczepiorek</h4>
+              <h5>Game level: Expert</h5>
+              <h5>Location: Wroclaw, Krzynicka 17a</h5>
               <div>
                 <ShowMap lat={lat} lng={lon}/>
               </div>
