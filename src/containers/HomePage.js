@@ -5,6 +5,7 @@ import zip from 'lodash/zip'
 import ShowMap from '../components/showMap'
 import $ from 'jquery'
 import { browserHistory, Link } from 'react-router'
+import MainMap from '../components/mainMap'
 
 class HomePage extends Component {
     constructor(props) {
@@ -72,7 +73,7 @@ class HomePage extends Component {
 
             <div className="mdl-cell mdl-cell--6-col">
               <div>
-                MAP
+                <MainMap events={events} />
               </div>
             </div>
 
