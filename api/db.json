@@ -12,6 +12,22 @@
       "date": 3,
       "description": 2,
       "id": 18
+    },
+    {
+      "title": "",
+      "date": "",
+      "description": "",
+      "lat": 0,
+      "lon": 0,
+      "id": 19
+    },
+    {
+      "title": "asd",
+      "date": "asd",
+      "description": "asd",
+      "lat": 51.08109643660297,
+      "lon": 17.076873779296875,
+      "id": 20
     }
   ]
 }
