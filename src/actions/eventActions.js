@@ -8,15 +8,17 @@ export const ADD_EVENT = 'ADD_EVENT'
 export const GET_EVENT = 'GET_EVENT'
 
 
-export function addEvent(params) {
-    // let queryPararms = toQueryString(params)
+export function addEvent(params, router) {
 
-    // fetch('http://localhost:3001/events', {"method": "post", "body": params})
+    console.log(router)
+
     let url = 'http://localhost:3001/events'
     $.ajax({
       type: "POST",
       url: url,
       data: params
+    }).done(function(response) {
+        window.location.href = "/event/"+response.id
     })
     return {
         type: ADD_EVENT

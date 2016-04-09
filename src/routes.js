@@ -10,7 +10,7 @@ export default (
         <Route path="/" component={App}>
             <Route path="/event/:id" component={EventPage} />
             <Route path="/add" component={AddEventPage} />
-            <Route path="/" component={HomePage} />
+            <Route path="/home" component={HomePage} />
         </Route>
     </Router>
 )

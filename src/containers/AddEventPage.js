@@ -31,8 +31,9 @@ class AddEventPage extends Component {
       params.eventDescription = this.refs.eventDescription.value
       params.lat = this.state.lat
       params.lon = this.state.lon
+      params.users = []
 
-      this.props.addEvent(params)
+      this.props.addEvent(params, this.props.route)
     }
 
     handleChangePosition(lat, lon) {
@@ -95,10 +96,12 @@ class AddEventPage extends Component {
 }
 
 function mapStateToProps(state, ownProps) {
-    const { addEvent } = ownProps.params
+
+    const { addEvent, router } = ownProps.params
 
     return {
-      addEvent
+      addEvent,
+      router
     }
 }
 

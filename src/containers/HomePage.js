@@ -42,10 +42,11 @@ class HomePage extends Component {
     render() {
 
         let events = this.state.events
+
         return (
           <div>
           {events.map(item =>
-                  <div>item.title</div>
+              <div>{item.title}</div>
           )}
           </div>
         )

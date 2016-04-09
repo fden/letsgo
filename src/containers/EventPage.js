@@ -34,8 +34,25 @@ class EventPage extends Component {
 
     }
 
-    handleLoadMoreClick() {
+    handleAttendClick() {
+      let url = 'http://localhost:3001/events/'+this.props.params.id
 
+      let eventObj = this.state.event
+
+      eventObj.users.push(1);
+
+      $.ajax({
+        url: url,
+        type: 'PUT',
+        data: eventObj,
+        success: function(result) {
+            // Do something with the result
+        }
+    });
+
+      this.serverRequest = $.put(url, event, function (result) {
+
+      }.bind(this));
     }
 
 
@@ -44,6 +61,7 @@ class EventPage extends Component {
 
         return (
           <div>
+            <button onClick={this.handleAttendClick.bind(this)}>Attend</button>
             <ShowMap lat={lat} lng={lon}/>
             {title}
 
