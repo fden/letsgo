@@ -75,6 +75,34 @@ class HomePage extends Component {
               <div>
                 <MainMap events={events} />
               </div>
+              <div>
+              <table className="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp main-table">
+                <thead>
+                  <tr>
+                    <th className="mdl-data-table__cell--non-numeric">Activity type</th>
+                    <th>Attenders</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="mdl-data-table__cell--non-numeric">Football</td>
+                    <td>25</td>
+                    <td>$2.90</td>
+                  </tr>
+                  <tr>
+                    <td className="mdl-data-table__cell--non-numeric">Basketball</td>
+                    <td>50</td>
+                    <td>$1.25</td>
+                  </tr>
+                  <tr>
+                    <td className="mdl-data-table__cell--non-numeric">Running</td>
+                    <td>10</td>
+                    <td>Free</td>
+                  </tr>
+                </tbody>
+                </table>
+              </div>
             </div>
 
           </div>

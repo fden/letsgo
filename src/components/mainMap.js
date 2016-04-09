@@ -77,7 +77,7 @@ export default class MainMap extends Component {
         containerProps={{
           ...restProps,
           style: {
-            height: `300px`,
+            height: `450px`,
             "min-width": `300px`,
             "max-width": `100%`
           },

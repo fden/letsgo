@@ -36,8 +36,9 @@ class LoginPage extends Component {
 
     render() {
         return (
-          <div>
-            <div className="card mdl-card mdl-shadow--2dp">
+          <div className="mdl-grid content">
+            <div className="mdl-cell mdl-cell--4-col">
+            <div className="card mdl-card mdl-shadow--2dp login-card">
               <div className="mdl-textfield mdl-js-textfield form-item">
                 <input className="mdl-textfield__input" type="text" ref="name" placeholder="Nickname"/>
               </div>
@@ -47,7 +48,7 @@ class LoginPage extends Component {
                 </button>
               </div>
             </div>
-
+          </div>
           </div>
         )
     }

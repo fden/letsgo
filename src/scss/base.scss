@@ -46,7 +46,7 @@ $cell-padding: 10px;
 }
 .content {
   background: #ecf0f1;
-
+  min-height: 660px;
 }
 .mdl-navigation {
   float: right;
@@ -115,9 +115,19 @@ $cell-padding: 10px;
     margin: 5px 0 0 0;
   }
 }
+
+.main-table {
+  width: 100%;
+  margin-top: 20px;
+}
 //Footer
 .mdl-mini-footer__left-section {
   margin: 0 auto;
+}
+
+// Login page
+.login-card {
+  width: 100%;
 }
 
 //grid override
