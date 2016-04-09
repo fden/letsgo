@@ -1,0 +1,9 @@
+/build/
+/vendor/
+/bin/
+.idea
+.vagrant
+/node_modules
+.DS_Store
+npm-debug.log
+/static
