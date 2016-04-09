@@ -112,7 +112,10 @@ class EventPage extends Component {
               {
                 !this.state.attend ? <button onClick={this.handleAttend.bind(this)} className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                 Attend
-                </button> : ''
+                </button> :
+                <button disabled onClick={this.handleAttend.bind(this)} className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Attending
+                </button>
               }
 
               </div>
