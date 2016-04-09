@@ -71,6 +71,7 @@ export default class MapAddMarker extends Component {
         }}
         ref="map"
         zoom={zoom}
+        onClick={this.handleMapClick.bind(this)}
         center={center}>
         {marker}
       </GoogleMap>
