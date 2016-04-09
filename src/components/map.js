@@ -20,9 +20,7 @@ export default class MapAddMarker extends Component {
   }
 
   handleMarkerClick() {
-    this.setState({
-      zoom: 8,
-    });
+
   }
 
   handleMapCenterChanged() {
@@ -74,7 +72,6 @@ export default class MapAddMarker extends Component {
         ref="map"
         zoom={zoom}
         center={center}
-        onClick={::this.handleMapClick}>
         {marker}
       </GoogleMap>
     );

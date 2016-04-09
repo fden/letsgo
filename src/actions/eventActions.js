@@ -16,7 +16,7 @@ export function addEvent(params, router) {
       url: url,
       data: params
     }).done(function(response) {
-        window.location.href = "/event/"+response.id
+        browserHistory.push('/event/'+response.id)
     })
     return {
         type: ADD_EVENT

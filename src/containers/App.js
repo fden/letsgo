@@ -51,6 +51,9 @@ class App extends Component {
         <div className="main-container">
           <div className="header clearfix">
             <h1 className="logo">LETS GO!</h1>
+            <button className="mdl-button mdl-js-button mdl-button--fab mdl-button--colored go-button">
+              <Link to={'/add'}><i className="material-icons">add</i></Link>
+            </button>
             <nav className="mdl-navigation">
               <Link to="/home">Events</Link>
               <a className="mdl-navigation__link" href="">Locations</a>

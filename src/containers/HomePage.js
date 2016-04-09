@@ -48,16 +48,16 @@ class HomePage extends Component {
           <div className="mdl-grid content">
             <div className="mdl-cell mdl-cell--6-col">
 
-              <ul className="demo-list-three mdl-list">
+              <ul className="main-list">
               {events.map(item =>
-                <li className="mdl-list__item mdl-list__item--three-line">
-                  <Link to={'/event/'+item.id}>
-                    <span className="mdl-list__item-primary-content attenders-pics">
+                <li className="">
+                  <Link to={'/event/'+item.id} className="main-list-link">
+                    <span className="attenders-pics">
                       <img src={'https://randomuser.me/api/portraits/men/'+item.id+'.jpg'}/>
                       <span>{item.title}</span>
-                      <span className="mdl-list__item-text-body">
+                      <p className="list-description">
                         {item.description}
-                      </span>
+                      </p>
                     </span>
                   </Link>
                   <span className="mdl-list__item-secondary-content">

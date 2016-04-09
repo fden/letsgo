@@ -24,6 +24,10 @@ $cell-padding: 10px;
   color: #9e9e9e;
   background: #424242;
   padding: 16px 8px;
+
+  .go-button {
+    margin: 26px 0 0 -30px;
+  }
 }
 .logo {
   color: #fff;
@@ -70,7 +74,34 @@ $cell-padding: 10px;
   height: 150px;
 }
 
+.main-list {
+  list-style: none;
+  padding: 0;
 
+  li {
+    position: relative;
+
+    .mdl-list__item-secondary-content {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+    }
+  }
+
+  .main-list-link {
+    display: block;
+    padding: $form-padding;
+    text-decoration: none;
+    transition: all 0.5s;
+
+    &:hover {
+      background: #fff;
+    }
+  }
+  .list-description {
+    color: #424242;
+  }
+}
 //Footer
 .mdl-mini-footer__left-section {
   margin: 0 auto;

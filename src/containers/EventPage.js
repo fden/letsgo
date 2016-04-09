@@ -23,8 +23,8 @@ class EventPage extends Component {
     componentDidMount(){
         let url = 'http://localhost:3001/events/'+this.props.params.id
 
-        this.serverRequest = $.get(url, function (result) {
-          var result = result;
+        $.get(url, function (result) {
+          console.log(result)
           this.setState({
             event: result
           });
@@ -61,7 +61,7 @@ class EventPage extends Component {
 
 
     render() {
-        const {title, lat, lon, description, date} = this.state.event
+        const {eventTitle, lat, lon, eventDescription, date} = this.state.event
 
         console.log()
 
@@ -86,9 +86,9 @@ class EventPage extends Component {
               </div>
             </div>
             <div className="mdl-cell mdl-cell--8-col content">
-              <h3>{title}</h3>
+              <h3>{eventTitle}</h3>
               <p>
-                  {description}
+                  {eventDescription}
               </p>
               <div>
                 <button onClick={this.handleAttendClick.bind(this)} className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
