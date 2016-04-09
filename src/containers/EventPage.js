@@ -43,9 +43,21 @@ class EventPage extends Component {
         const {title, lat, lon, description, date} = this.state.event
 
         return (
-          <div>
-            <ShowMap lat={lat} lng={lon}/>
-            {title}
+
+          <div className="mdl-grid">
+
+            <div className="mdl-cell mdl-cell--4-col">
+              <h3>{title}</h3>
+
+              <div>
+                <ShowMap lat={lat} lng={lon}/>
+              </div>
+            </div>
+            <div className="mdl-cell mdl-cell--8-col">
+              <p>
+                  {description}
+              </p>
+            </div>
 
           </div>
         )
