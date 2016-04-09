@@ -2,6 +2,7 @@
 // import * as types from '../constants/ActionTypes';
 import _ from 'underscore'
 import 'isomorphic-fetch'
+import $ from 'jquery'
 
 export const ADD_EVENT = 'ADD_EVENT'
 export const GET_EVENT = 'GET_EVENT'
@@ -10,18 +11,22 @@ export const GET_EVENT = 'GET_EVENT'
 export function addEvent(params) {
     // let queryPararms = toQueryString(params)
 
-    // fetch('http://localhost:3001/events', {"method": "post", "body": payload})
-    // return {
-    //     type: types.ADD_EVENT,
-    //     monitoringType: type,
-    //     identifier: identifier
-    // }
+    // fetch('http://localhost:3001/events', {"method": "post", "body": params})
+    let url = 'http://localhost:3001/events'
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: params
+    })
+    return {
+        type: ADD_EVENT
+    }
 }
 
-function getEvent(event) {
+function getEvent(events) {
   return {
-    type: GET_EVENT,
-    "event": event
+    "type": GET_EVENT,
+    "event": events
   }
 }
 
@@ -33,28 +38,11 @@ function requestEvent(event) {
 }
 
 export function getEventById(id = 1) {
-    // fetch('http://localhost:3001/events/'+id)
-  // return dispatch =>
-  //   fetch('http://localhost:3001/events/')
-  //     .then(response => {
-  //       console.log(response)
-  //       // getEvent(response)
-  //       // return {
-  //       //   "type": "GET_EVENT",
-  //       //   "event": event
-  //       // }
-  //     })
-  //     .catch(err => { throw err; });
-  //
-  // return {
-  //   "type": "REQUEST_EVENT"
-  // }
 
   return function (dispatch) {
     dispatch(requestEvent())
     fetch('http://localhost:3001/events/'+id)
         .then(response => {
-          console.log(response)
           dispatch(getEvent(response))
           // getEvent(response)
           // return {
