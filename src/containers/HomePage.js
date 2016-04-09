@@ -46,7 +46,9 @@ class HomePage extends Component {
         return (
           <div>
           {events.map(item =>
-              <div>{item.title}</div>
+              <div>
+                <a href={'/event/'+item.id}>{item.title}</a>
+              </div>
           )}
           </div>
         )
