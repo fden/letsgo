@@ -20,7 +20,7 @@ class EventPage extends Component {
     }
 
     componentDidMount(){
-        let url = 'http://localhost:3001/events/'+1
+        let url = 'http://localhost:3001/events/'+this.props.params.id
 
         this.serverRequest = $.get(url, function (result) {
           var result = result;
