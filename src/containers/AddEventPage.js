@@ -2,12 +2,16 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { addEvent } from '../actions/eventActions'
 import zip from 'lodash/zip'
-
+import MapAddMarker from '../components/map'
 
 
 class AddEventPage extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+          lat: 0,
+          lon: 0
+        }
         //require("../styles/less/ppvDashboard.less");
     }
 
@@ -25,15 +29,23 @@ class AddEventPage extends Component {
       params.eventTitle = this.refs.eventTitle.value
       params.eventDate = this.refs.eventDate.value
       params.eventDescription = this.refs.eventDescription.value
+      params.lat = this.state.lat
+      params.lon = this.state.lon
 
       this.props.addEvent(params)
+    }
+
+    handleChangePosition(lat, lon) {
+        this.setState({
+          lat:lat,
+          lon: lon
+        })
     }
 
 
     render() {
         return (
           <div>
-
 
             <div className="card mdl-card mdl-shadow--2dp">
 
@@ -61,6 +73,10 @@ class AddEventPage extends Component {
               <div className="mdl-textfield mdl-js-textfield form-item">
                 <textarea className="mdl-textfield__input" type="text" rows= "3" ref="eventDescription" placeholder="Event description"></textarea>
 
+              </div>
+
+              <div>
+                <MapAddMarker onChange={this.handleChangePosition.bind(this)}/>
               </div>
 
               <div className="mdl-card__actions mdl-card--border">
