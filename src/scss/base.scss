@@ -80,6 +80,7 @@ $cell-padding: 10px;
 
   li {
     position: relative;
+    border-bottom: 1px solid #ccc;
 
     .mdl-list__item-secondary-content {
       position: absolute;
@@ -96,6 +97,10 @@ $cell-padding: 10px;
 
     &:hover {
       background: #fff;
+    }
+    .list-title {
+      font-size: 20px;
+      margin-left: 10px;
     }
   }
   .list-description {
