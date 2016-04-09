@@ -2,29 +2,23 @@
   "events": [
     {
       "id": 1,
-      "title": "Basketball event",
-      "date": "2016-04-1 10:00",
-      "description": "descr match",
+      "eventTitle": "Basketball event",
+      "eventDate": "2016-04-1 10:00",
+      "eventDescription": "Zapraszam wszystkich chętnych na koszykówke. Mecz odbędzie się na boisku około szpitala, tak że w razie potrzeby można skorzystać z okazji. Zapraszam!",
+      "lat": 50.08109643660297,
+      "lon": 16.076873779296875,
       "max": 10
     },
     {
-      "title": 1,
-      "date": 3,
-      "description": 2,
+      "eventTitle": "Piłka nożna na Borowskiej",
+      "eventDate": "13-03-2017",
+      "eventDescription": "PILNIE!!!!111 Poszukuję 2.5 chętnych do zagrania w piłkę na 100zł do osoby. Tylko poważne osoby!",
       "id": 18
     },
     {
-      "title": "",
-      "date": "",
-      "description": "",
-      "lat": 0,
-      "lon": 0,
-      "id": 19
-    },
-    {
-      "title": "asd",
-      "date": "asd",
-      "description": "asd",
+      "eventTitle": "Ktoś chętny na american football? ",
+      "eventDate": "asd",
+      "eventDescription": "Uwaga! Ogłoszenie tylko dla osoób z doświadczniem!",
       "lat": 51.08109643660297,
       "lon": 17.076873779296875,
       "id": 20
@@ -38,39 +32,13 @@
       "id": 21
     },
     {
-      "eventTitle": "asd",
-      "eventDate": "asd",
-      "eventDescription": "asd",
-      "lat": 51.11817889367673,
-      "lon": 17.061767578125,
+      "eventTitle": "Wspólne bieganie",
+      "eventDate": "12-01-2017",
+      "eventDescription": "Szukam pięknych dziewczyn dla wspólnego biegania po piwo.",
+      "lat": 0,
+      "lon": 0,
+      "users[]": 1,
       "id": 22
-    },
-    {
-      "eventTitle": "Event",
-      "eventDate": 203141,
-      "eventDescription": "asdasd",
-      "lat": 51.12421275782688,
-      "lon": 17.083740234375,
-      "users[]": 1,
-      "id": 23
-    },
-    {
-      "eventTitle": "asd",
-      "eventDate": "",
-      "eventDescription": "",
-      "lat": 51.14575583962205,
-      "lon": 17.076873779296875,
-      "users[]": 1,
-      "id": 24
-    },
-    {
-      "eventTitle": "Kosz na odra",
-      "eventDate": 2015,
-      "eventDescription": "description",
-      "lat": 51.12421275782688,
-      "lon": 17.021942138671875,
-      "users[]": 1,
-      "id": 25
     }
   ],
   "users": [
@@ -79,11 +47,11 @@
       "name": "test"
     },
     {
-      "name": "asd",
+      "name": "Andrzej Mazur",
       "id": 2
     },
     {
-      "name": "",
+      "name": "Mick",
       "id": 3
     }
   ]

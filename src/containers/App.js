@@ -55,7 +55,7 @@ class App extends Component {
               <Link to={'/add'}><i className="material-icons">add</i></Link>
             </button>
             <nav className="mdl-navigation">
-              <Link to="/home">Events</Link>
+              <Link to="/home" className="mdl-navigation__link">Events</Link>
               <a className="mdl-navigation__link" href="">Locations</a>
               <a className="mdl-navigation__link" href="">News</a>
               <a className="mdl-navigation__link" href="">About</a>

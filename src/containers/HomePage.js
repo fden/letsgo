@@ -54,10 +54,10 @@ class HomePage extends Component {
                   <Link to={'/event/'+item.id} className="main-list-link">
                     <span className="attenders-pics">
                       <img src={'https://randomuser.me/api/portraits/men/'+item.id+'.jpg'}/>
-                      <span className="list-title">{item.title}</span>
-                      
+                      <span className="list-title">{item.eventTitle}</span>
+
                       <p className="list-description">
-                        {item.description}
+                        {item.eventDescription}
                       </p>
                     </span>
                   </Link>
