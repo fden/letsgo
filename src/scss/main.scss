@@ -1,25 +1,4 @@
-//
-// Add event form
-
-$form-padding: 16px;
-
-.card-header {
-  background: url('https://static.pexels.com/photos/39562/the-ball-stadion-football-the-pitch-39562-large.jpeg') no-repeat;
-  background-size: cover;
-  position: relative;
-
-  .card-item-bg {
-    background: rgba(0,0,0,0.25);
-    color: #fff;
-  }
-}
-.form-item {
-  padding: $form-padding;
-}
-
-
-.header {
-  color: #9e9e9e;
-  background-color: #424242;
-  padding: 16px;
-}
+// compileCompressed: ../css/$1.css
+@import "variables";
+@import "typography";
+@import "base";

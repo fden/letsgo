@@ -1,7 +1,1 @@
-.card-header { background: url("https://static.pexels.com/photos/39562/the-ball-stadion-football-the-pitch-39562-large.jpeg") no-repeat; background-size: cover; position: relative; }
-
-.card-header .card-item-bg { background: rgba(0, 0, 0, 0.25); color: #fff; }
-
-.form-item { padding: 16px; }
-
-.header { color: #9e9e9e; background-color: #424242; padding: 16px; }
+h1,h2,h3,h4,h5{margin:0 0 10px 0}.card-header{background:url("https://static.pexels.com/photos/39562/the-ball-stadion-football-the-pitch-39562-large.jpeg") no-repeat;background-size:cover;position:relative}.card-header .card-item-bg{background:rgba(0,0,0,0.25);color:#fff}.form-item{padding:16px}.header{color:#9e9e9e;background-color:#424242;padding:16px}.sidebar{background:#bdc3c7}.content{background:#ecf0f1}.mdl-grid{padding:0}.mdl-grid .mdl-cell{margin:0;padding:10px}.mdl-grid .mdl-cell--4-col{width:33.3%}.mdl-grid .mdl-cell--8-col{width:66.7%}
