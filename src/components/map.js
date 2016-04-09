@@ -71,9 +71,9 @@ export default class MapAddMarker extends Component {
         }}
         ref="map"
         zoom={zoom}
-        center={center}
+        center={center}>
         {marker}
       </GoogleMap>
-    );
+    )
   }
 }
