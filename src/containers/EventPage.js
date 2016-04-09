@@ -11,7 +11,9 @@ class EventPage extends Component {
         super(props)
         //require("../styles/less/ppvDashboard.less");
         this.state = {
-          event: {}
+          event: {},
+          attenders: 5,
+          attend: false
         }
     }
 
@@ -59,11 +61,31 @@ class EventPage extends Component {
       }.bind(this));
     }
 
+    handleAttend() {
+      if (this.props.user.id == 0) {
+          browserHistory.push('/login')
+      }
+
+      this.setState({
+        attenders: this.state.attenders + 1,
+        attend: true
+      })
+    }
+
 
     render() {
         const {eventTitle, lat, lon, eventDescription, date} = this.state.event
 
-        console.log()
+        let attenders = []
+
+        attenders.push(<img src="https://randomuser.me/api/portraits/men/1.jpg"/>)
+        attenders.push(<img src="https://randomuser.me/api/portraits/men/2.jpg"/>)
+        attenders.push(<img src="https://randomuser.me/api/portraits/men/3.jpg"/>)
+        attenders.push(<img src="https://randomuser.me/api/portraits/men/4.jpg"/>)
+        attenders.push(<img src="https://randomuser.me/api/portraits/men/5.jpg"/>)
+        if (this.state.attend) {
+          attenders.push(<img src="https://randomuser.me/api/portraits/men/6.jpg"/>)
+        }
 
         return (
           <div className="mdl-grid">
@@ -75,14 +97,10 @@ class EventPage extends Component {
                 <ShowMap lat={lat} lng={lon}/>
               </div>
               <div className="attenders">
-                  <h5>Attenders: 5</h5>
+                  <h5>Attenders: {this.state.attenders}</h5>
               </div>
               <div className="attenders-pics">
-                <img src="https://randomuser.me/api/portraits/men/1.jpg"/>
-                <img src="https://randomuser.me/api/portraits/men/2.jpg" />
-                <img src="https://randomuser.me/api/portraits/men/3.jpg" />
-                <img src="https://randomuser.me/api/portraits/men/5.jpg" />
-                <img src="https://randomuser.me/api/portraits/men/7.jpg" />
+                {attenders}
               </div>
             </div>
             <div className="mdl-cell mdl-cell--8-col content">
@@ -91,9 +109,12 @@ class EventPage extends Component {
                   {eventDescription}
               </p>
               <div>
-                <button onClick={this.handleAttendClick.bind(this)} className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              {
+                !this.state.attend ? <button onClick={this.handleAttend.bind(this)} className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                 Attend
-                </button>
+                </button> : ''
+              }
+
               </div>
             </div>
           </div>

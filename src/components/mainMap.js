@@ -64,7 +64,6 @@ export default class MainMap extends Component {
     let markers = []
 
     _.map(events,function(v,k){
-      console.log(v)
       let markerPos = {}
       markerPos.lat = v.lat
       markerPos.lng = v.lon
