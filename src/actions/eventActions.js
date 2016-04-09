@@ -9,9 +9,6 @@ export const GET_EVENT = 'GET_EVENT'
 
 
 export function addEvent(params, router) {
-
-    console.log(router)
-
     let url = 'http://localhost:3001/events'
     $.ajax({
       type: "POST",
@@ -29,6 +26,13 @@ function getEvent(events) {
   return {
     "type": GET_EVENT,
     "event": events
+  }
+}
+
+function getUsersAction(users) {
+  return {
+    "type": GET_USERS,
+    "users": users
   }
 }
 
@@ -54,6 +58,27 @@ export function getEventById(id = 1) {
         })
         .catch(err => { throw err; });
   }
+}
+
+function getUser(params) {
+  // return function (dispatch) {
+    let url = 'http://localhost:3001/users'
+
+    $.get(url, function (result) {
+      console.log(result)
+    }.bind(this));
+  // }
+
+
+}
+
+export function loginUser(params){
+
+  let url = 'http://localhost:3001/users'
+
+  $.get(url, function (result) {
+    console.log(result)
+  }.bind(this));
 }
 
 function toQueryString(obj) {
