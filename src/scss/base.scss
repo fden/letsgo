@@ -52,8 +52,16 @@ $cell-padding: 10px;
 }
 
 //content
-#root {
-  min-height: 900px;
+.attenders {
+  margin: 10px 0;
+}
+.attenders-pics {
+
+  img {
+    max-width: 100%;
+    width: 75px;
+    margin: 0 5px 5px 0;
+  }
 }
 
 //Footer
