@@ -4,6 +4,7 @@ import { getEventById } from '../actions/eventActions'
 import zip from 'lodash/zip'
 import ShowMap from '../components/showMap'
 import $ from 'jquery'
+import { browserHistory, Link } from 'react-router'
 
 class HomePage extends Component {
     constructor(props) {
@@ -50,7 +51,7 @@ class HomePage extends Component {
               <ul className="demo-list-three mdl-list">
               {events.map(item =>
                 <li className="mdl-list__item mdl-list__item--three-line">
-                  <a href={'/event/'+item.id}>
+                  <Link to={'/event/'+item.id}>
                     <span className="mdl-list__item-primary-content attenders-pics">
                       <img src={'https://randomuser.me/api/portraits/men/'+item.id+'.jpg'}/>
                       <span>{item.title}</span>
@@ -58,7 +59,7 @@ class HomePage extends Component {
                         {item.description}
                       </span>
                     </span>
-                  </a>
+                  </Link>
                   <span className="mdl-list__item-secondary-content">
                     <a className="mdl-list__item-secondary-action" href="#"><i className="material-icons">star</i></a>
                   </span>

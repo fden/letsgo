@@ -39,7 +39,13 @@ class App extends Component {
   }
 
   render() {
-    const { children, inputValue } = this.props
+    const { children, inputValue, user } = this.props
+
+    let account = <Link to={'/login'}>login</Link>
+    if (!user.id == 0) {
+        account = <div className="material-icons mdl-badge mdl-badge--overlap" data-badge="3">account_box</div>
+    }
+
     return (
       <div>
         <div className="main-container">
@@ -50,7 +56,7 @@ class App extends Component {
               <a className="mdl-navigation__link" href="">Locations</a>
               <a className="mdl-navigation__link" href="">News</a>
               <a className="mdl-navigation__link" href="">About</a>
-              <div className="material-icons mdl-badge mdl-badge--overlap" data-badge="3">account_box</div>
+              {account}
             </nav>
           </div>
           {children}
@@ -83,6 +89,7 @@ App.propTypes = {
 function mapStateToProps(state, ownProps) {
   return {
     errorMessage: state.errorMessage,
+    user: state.user,
     inputValue: ownProps.location.pathname.substring(1)
   }
 }

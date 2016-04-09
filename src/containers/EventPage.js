@@ -63,6 +63,8 @@ class EventPage extends Component {
     render() {
         const {title, lat, lon, description, date} = this.state.event
 
+        console.log()
+
         return (
           <div className="mdl-grid">
             <div className="mdl-cell mdl-cell--4-col sidebar">
@@ -81,7 +83,6 @@ class EventPage extends Component {
                 <img src="https://randomuser.me/api/portraits/men/3.jpg" />
                 <img src="https://randomuser.me/api/portraits/men/5.jpg" />
                 <img src="https://randomuser.me/api/portraits/men/7.jpg" />
-
               </div>
             </div>
             <div className="mdl-cell mdl-cell--8-col content">
@@ -95,7 +96,6 @@ class EventPage extends Component {
                 </button>
               </div>
             </div>
-
           </div>
         )
     }
