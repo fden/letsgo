@@ -44,12 +44,36 @@ class HomePage extends Component {
         let events = this.state.events
 
         return (
-          <div>
-          {events.map(item =>
+          <div className="mdl-grid content">
+            <div className="mdl-cell mdl-cell--6-col">
+
+              <ul className="demo-list-three mdl-list">
+              {events.map(item =>
+                <li className="mdl-list__item mdl-list__item--three-line">
+                  <a href={'/event/'+item.id}>
+                    <span className="mdl-list__item-primary-content attenders-pics">
+                      <img src={'https://randomuser.me/api/portraits/men/'+item.id+'.jpg'}/>
+                      <span>{item.title}</span>
+                      <span className="mdl-list__item-text-body">
+                        {item.description}
+                      </span>
+                    </span>
+                  </a>
+                  <span className="mdl-list__item-secondary-content">
+                    <a className="mdl-list__item-secondary-action" href="#"><i className="material-icons">star</i></a>
+                  </span>
+                </li>
+              )}
+              </ul>
+
+            </div>
+
+            <div className="mdl-cell mdl-cell--6-col">
               <div>
-                <a href={'/event/'+item.id}>{item.title}</a>
+                MAP
               </div>
-          )}
+            </div>
+
           </div>
         )
     }
