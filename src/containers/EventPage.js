@@ -2,11 +2,16 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { getEventById } from '../actions/eventActions'
 import zip from 'lodash/zip'
+import ShowMap from '../components/showMap'
+import $ from 'jquery'
 
 class EventPage extends Component {
     constructor(props) {
         super(props)
         //require("../styles/less/ppvDashboard.less");
+        this.state = {
+          event: {}
+        }
     }
 
     componentWillMount() {
@@ -15,8 +20,14 @@ class EventPage extends Component {
     }
 
     componentDidMount(){
-        // let id = this.props.params.id
-        this.props.getEventById()
+        let url = 'http://localhost:3001/events/'+1
+
+        this.serverRequest = $.get(url, function (result) {
+          var result = result;
+          this.setState({
+            event: result
+          });
+        }.bind(this));
     }
 
     componentWillReceiveProps(nextProps) {
@@ -29,9 +40,13 @@ class EventPage extends Component {
 
 
     render() {
+        const {title, lat, lon, description, date} = this.state.event
+
         return (
           <div>
-            test
+            <ShowMap lat={lat} lng={lon}/>
+            {title}
+
           </div>
         )
     }
