@@ -1,5 +1,5 @@
 import { default as React, Component } from "react";
-
+import _ from 'underscore'
 import { GoogleMap, Marker } from "react-google-maps";
 
 /*
@@ -7,7 +7,7 @@ import { GoogleMap, Marker } from "react-google-maps";
  *
  * Add <script src="https://maps.googleapis.com/maps/api/js"></script> to your HTML to provide google.maps reference
  */
-export default class ShowMap extends Component {
+export default class MainMap extends Component {
 
   static defaultProps = {
     initialCenter: { lat: 51.1079, lng: 17.0385 },
@@ -15,7 +15,7 @@ export default class ShowMap extends Component {
   }
 
   state = {
-    zoom: 13,
+    zoom: 11,
     center: this.props.initialCenter,
   }
 
@@ -26,8 +26,6 @@ export default class ShowMap extends Component {
   handleMapCenterChanged() {
     const newPos = this.refs.map.getCenter();
     if (newPos.equals(new google.maps.LatLng(this.props.initialCenter))) {
-      // Notice: Check newPos equality here,
-      // or it will fire center_changed event infinitely
       return;
     }
     if (this._timeoutId) {
@@ -55,7 +53,7 @@ export default class ShowMap extends Component {
   }
 
   render() {
-    const { initialCenter, ...restProps } = this.props;
+    const { initialCenter, ...restProps, events } = this.props;
     const { zoom, center, markerPosition } = this.state;
 
     let markerPos = {
@@ -63,8 +61,16 @@ export default class ShowMap extends Component {
       lng: this.props.lng
     }
     console.log(this.props)
+    let markers = []
 
-    let marker = <Marker position={markerPos}/>
+    _.map(events,function(v,k){
+      console.log(v)
+      let markerPos = {}
+      markerPos.lat = v.lat
+      markerPos.lng = v.lon
+      markers.push(<Marker position={markerPos}/>)
+    })
+    // let marker = <Marker position={markerPos}/>
 
     return (
       <GoogleMap
@@ -78,9 +84,8 @@ export default class ShowMap extends Component {
         }}
         ref="map"
         zoom={zoom}
-        center={markerPos}
-        onClick={::this.handleMapClick}>
-        {marker}
+        center={this.props.initialCenter}>
+        {markers}
       </GoogleMap>
     );
   }
