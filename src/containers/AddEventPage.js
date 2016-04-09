@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { addEvent } from '../actions/eventActions'
 import zip from 'lodash/zip'
 import MapAddMarker from '../components/map'
-
+import { browserHistory, Link } from 'react-router'
 
 class AddEventPage extends Component {
     constructor(props) {
@@ -19,8 +19,10 @@ class AddEventPage extends Component {
 
     }
 
-    handleLoadMoreClick() {
-
+    componentWillMount() {
+      if (this.props.user.id == 0) {
+          window.location.href = '/login'
+      }
     }
 
     handleSubmit() {
@@ -31,7 +33,7 @@ class AddEventPage extends Component {
       params.eventDescription = this.refs.eventDescription.value
       params.lat = this.state.lat
       params.lon = this.state.lon
-      params.users = []
+      params.users = [this.props.user.id]
 
       this.props.addEvent(params, this.props.route)
     }
@@ -101,7 +103,8 @@ function mapStateToProps(state, ownProps) {
 
     return {
       addEvent,
-      router
+      router,
+      user: state.user
     }
 }
 

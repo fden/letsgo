@@ -15,14 +15,12 @@ export default class ShowMap extends Component {
   }
 
   state = {
-    zoom: 10,
+    zoom: 13,
     center: this.props.initialCenter,
   }
 
   handleMarkerClick() {
-    this.setState({
-      zoom: 10,
-    });
+
   }
 
   handleMapCenterChanged() {
@@ -62,8 +60,9 @@ export default class ShowMap extends Component {
 
     let markerPos = {
       lat: this.props.lat,
-      lon: this.props.lng
+      lng: this.props.lng
     }
+    console.log(this.props)
 
     let marker = <Marker position={markerPos}/>
 
@@ -79,7 +78,7 @@ export default class ShowMap extends Component {
         }}
         ref="map"
         zoom={zoom}
-        center={center}
+        center={markerPos}
         onClick={::this.handleMapClick}>
         {marker}
       </GoogleMap>
