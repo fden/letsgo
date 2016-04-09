@@ -60,10 +60,20 @@ class EventPage extends Component {
         const {title, lat, lon, description, date} = this.state.event
 
         return (
-          <div>
-            <button onClick={this.handleAttendClick.bind(this)}>Attend</button>
-            <ShowMap lat={lat} lng={lon}/>
-            {title}
+          <div className="mdl-grid">
+              <button onClick={this.handleAttendClick.bind(this)}>Attend</button>
+            <div className="mdl-cell mdl-cell--4-col">
+              <h3>{title}</h3>
+
+              <div>
+                <ShowMap lat={lat} lng={lon}/>
+              </div>
+            </div>
+            <div className="mdl-cell mdl-cell--8-col">
+              <p>
+                  {description}
+              </p>
+            </div>
 
           </div>
         )
