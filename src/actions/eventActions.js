@@ -3,6 +3,7 @@
 import _ from 'underscore'
 import 'isomorphic-fetch'
 import $ from 'jquery'
+import { browserHistory } from 'react-router'
 
 export const ADD_EVENT = 'ADD_EVENT'
 export const GET_EVENT = 'GET_EVENT'
@@ -60,25 +61,39 @@ export function getEventById(id = 1) {
   }
 }
 
-function getUser(params) {
-  // return function (dispatch) {
-    let url = 'http://localhost:3001/users'
-
-    $.get(url, function (result) {
-      console.log(result)
-    }.bind(this));
-  // }
-
-
+function loginUserAction(params) {
+    return {
+      type: "LOGIN_USER",
+      user: params
+    }
 }
 
 export function loginUser(params){
 
-  let url = 'http://localhost:3001/users'
+  return function (dispatch) {
+    let url = 'http://localhost:3001/users?name='+params.name
 
-  $.get(url, function (result) {
-    console.log(result)
-  }.bind(this));
+    $.get(url, function (result) {
+      if (result.length == 0) {
+        $.ajax({
+          type: "POST",
+          url: 'http://localhost:3001/users',
+          data: params
+        }).done(function(response) {
+            browserHistory.push('/home')
+        })
+      } else {
+        dispatch(loginUserAction(result[0]))
+        // window.location.href = "/home"
+        browserHistory.push('/home')
+      }
+    }.bind(this));
+  }
+
+
+  return {
+    type: "REQUEST_LOGIN"
+  }
 }
 
 function toQueryString(obj) {

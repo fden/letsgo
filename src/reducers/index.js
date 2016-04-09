@@ -4,6 +4,7 @@ import { routerReducer as routing } from 'react-router-redux'
 import { combineReducers } from 'redux'
 import entities from './entities.js'
 import events from './events.js'
+import user from './user.js'
 
 const fetching = {
     recentSearches:false,
@@ -40,7 +41,8 @@ function errorMessage(state = null, action) {
 const rootReducer = combineReducers({
     routing,
     isFetching,
-    events
+    events,
+    user
 })
 
 export default rootReducer

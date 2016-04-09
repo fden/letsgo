@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { getEventById } from '../actions/eventActions'
 import zip from 'lodash/zip'
+import { browserHistory } from 'react-router'
 import ShowMap from '../components/showMap'
 import $ from 'jquery'
 
@@ -35,6 +36,9 @@ class EventPage extends Component {
     }
 
     handleAttendClick() {
+      if (this.props.user.id == 0) {
+          browserHistory.push('/login')
+      }
       let url = 'http://localhost:3001/events/'+this.props.params.id
 
       let eventObj = this.state.event
@@ -100,6 +104,7 @@ class EventPage extends Component {
 function mapStateToProps(state, ownProps) {
     const { getEventById } = ownProps.params
     return {
+      user: state.user,
       getEventById
     }
 }
